@@ -16,20 +16,24 @@ const Content = () => {
   const { id, imageUrl, title, body } = data.data;
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className=" lg:mt-14 lg:ml-[360px] ml-4 my-8 md:mt-5 md:mx-8">
       {imageUrl && (
         <div
           key={id}
-          className="bg-white box-content  rounded-[8px] ring-2 ring-bPurple-800 h-[946px] w-full"
+          className="flex flex-col align-start bg-white rounded-[8px] ring-2 ring-bPurple-800 h-[946px] lg:h-[803px] lg:w-[1138px] md:h-[853px] md:w-[680px] w-72 overflow-hidden"
         >
           <img
             src={imageUrl}
-            className="object-cover h-43.75 w-full rounded-t-lg"
+            className="lg:max-h-[381px] object-cover lg:object-center h-full w-full rounded-t-lg "
           />
-          <h2 className="pb-[10px] pt-[10px] p-[16px] font-sans font-bold text-[20px] text-bPurple-800">
-            {title}
-          </h2>
-          <p className="p-[16px] pt-[10px]">{body}</p>
+          <span className="lg:p-8">
+            <h2 className="justify-end self-stretch pb-[10px] pt-[10px] p-[16px] font-sans font-bold text-[20px] text-bPurple-800 md:text-[32px] lg:text-[36px]">
+              {title}
+            </h2>
+            <p className="justify-end self-stretch p-[16px] pt-[10px] text-[16px] md:text-[20px] lg:text-[24px]">
+              {body}
+            </p>
+          </span>
         </div>
       )}
     </div>

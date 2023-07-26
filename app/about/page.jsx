@@ -17,16 +17,18 @@ const About = () => {
   const { id, title, body } = data.data;
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className="flex p-4 md:p-8 lg:p-8 lg:px-[360px] lg:pt-[56px] items-center">
       {id && (
         <div
           key={id}
-          className="bg-white box-content rounded-[8px] ring-2 ring-bPurple-800 h-[946px] w-full"
+          className="flex flex-col items-start bg-white rounded-[8px] ring-2 ring-bPurple-800 h-[946px] w-full lg:max-w-[1200px] lg:max-h-[525px]"
         >
-          <h2 className="pb-[10px] pt-4 p-4 font-bold text-2xl text-bPurple-800">
+          <h2 className="pb-[10px] pt-4 p-4 font-bold text-2xl text-bPurple-800 md:text-[32px] lg:text-[36px]">
             {title}
           </h2>
-          <p className="p-[16px]">{body}</p>
+          <p className="p-[16px] text-4 md:text-[20px] lg:text-[24px]">
+            {body}
+          </p>
         </div>
       )}
     </div>

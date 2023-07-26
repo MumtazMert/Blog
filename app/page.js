@@ -21,24 +21,27 @@ const Home = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className="m-4 md:m-8 md:space-y-9 lg:mx-[360px] lg:my-14 space-y-4">
       {content.map((item) => (
         <div
           key={item.id}
-          className="ring-2 w-80 ring-bPurple-800 rounded-[8px] shadow bg-white"
+          className="flex flex-col flex-1 bg-white ring-2 ring-bPurple-800 min-h-[150px] md:h-[289px] md:w-[680px] lg:h-[286px] lg:w-[1202px] overflow-hidden lg:flex-row rounded-xl shadow-md"
         >
-          <img
-            src={item.imageUrl}
-            alt=""
-            className="object-cover h-48 w-full rounded-t-lg"
-          />
-
-          <div className="text-bPurple-800 p-4">
-            <h2 className="font-bold text-2xl ">
+          <div className="lg:w-[427px] lg:h-full h-full min-w-[192px] md:h-[205px]">
+            <img
+              src={item.imageUrl}
+              alt=""
+              className="object-cover h-full w-full md:object-top"
+            />
+          </div>
+          <div className="lg:p-8 px-4">
+            <h2 className="text-bPurple-800 font-bold text-2xl inline-block lg:pb-[10px] md:text-[32px] lg:text-[36px] md:px-8 md:py-2">
               <Link href="/content">{item.title}</Link>
             </h2>
 
-            <p className=" text-[16px] ">{item.body}</p>
+            <p className="text-bPurple-800 text-[16px] md:text-[20px] inline-block lg:text-[24px] md:pb-8 md:px-8">
+              {item.body}
+            </p>
           </div>
         </div>
       ))}
