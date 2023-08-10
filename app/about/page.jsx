@@ -1,33 +1,38 @@
-'use client';
+"use client";
 
-import axios from 'axios';
-import useSWR from 'swr';
+import axios from "axios";
+import useSWR from "swr";
+
+async function fetcher(url) {
+  const res = await axios.get(url);
+  return res.data;
+}
 
 const About = () => {
-    const fetcher = (url) => axios.get(url).then((res) => res.data);
+  const { data, error } = useSWR("../api/about", fetcher);
 
-    const { data, error } = useSWR('http://localhost:3001/about', fetcher);
+  if (error) return <div>Request Failed</div>;
+  if (!data) return <div>Loading....</div>;
 
-    if (error) return <div>Request Failed</div>;
-    if (!data) return <div>Loading....</div>;
+  const { id, title, body } = data.data;
 
-    return (
-        <div className="flex flex-wrap justify-center gap-4 p-4">
-            {data?.map((about) => {
-                const { id, title, body } = about ?? {};
-
-                return (
-                    <div
-                        key={id}
-                        className="bg-white box-content rounded-[8px] ring-2 ring-bPurple-800 h-[946px] w-full"
-                    >
-                        <h2 className="pb-[10px] pt-4 p-4 font-bold text-2xl text-bPurple-800">{title}</h2>
-                        <p className="p-[16px]">{body}</p>
-                    </div>
-                );
-            })}
+  return (
+    <div className="flex p-4 md:p-8 lg:p-8 lg:px-[360px] lg:pt-[56px] items-center">
+      {id && (
+        <div
+          key={id}
+          className="flex flex-col items-start bg-white rounded-[8px] ring-2 ring-bPurple-800 h-[946px] w-full lg:max-w-[1200px] lg:max-h-[525px]"
+        >
+          <h2 className="pb-[10px] pt-4 p-4 font-bold text-2xl text-bPurple-800 md:text-[32px] lg:text-[36px]">
+            {title}
+          </h2>
+          <p className="p-[16px] text-4 md:text-[20px] lg:text-[24px]">
+            {body}
+          </p>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default About;
