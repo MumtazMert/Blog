@@ -5,22 +5,22 @@ export async function GET() {
     {
       id: 1,
       imageUrl:
-        "https://imageio.forbes.com/specials-images/imageserve/5ef8be876cd39700069cf7b8/0x0.jpg?format=jpg&crop=1000,909,x0,y260,safe&width=1200",
-      title: "Some random things",
-      body: "Nam et mauris congue, scelerisque ligula vitae, dictum arcu.",
+        "https://tms-outsource.com/blog/wp-content/uploads/2023/05/javascript-alternatives.jpg",
+      title: "Javascript",
+      body: "JavaScript is a versatile and widely used programming language that primarily operates in web browsers",
     },
     {
       id: 2,
       imageUrl:
-        "https://img.freepik.com/free-photo/puppy-that-is-walking-snow_1340-37228.jpg",
-      title: "Maya bok yesin",
-      body: "Nam et mauris congue, scelerisque ligula vitae, dictum arcu.",
+        "https://e1.pxfuel.com/desktop-wallpaper/452/933/desktop-wallpaper-python-black-logo-programming-language-grid-metal-background-python-artwork-creative-programming-language-signs-python-logo-with-resolution-2880x1800-high-quality-python-logo.jpg",
+      title: "Python",
+      body: "Python is a high-level, versatile programming language known for its simplicity and readability. It was created in the late 1980s by Guido van Rossum.",
     },
     {
       id: 3,
-      imageUrl: "https://i.ytimg.com/vi/_Jp6H1f7xoU/maxresdefault.jpg",
-      title: "Maya bok mu yesin ?",
-      body: "Nam et mauris congue, scelerisque ligula vitae, dictum arcu.",
+      imageUrl: "https://reactapp.ir/wp-content/uploads/reactjs.jpg",
+      title: "React",
+      body: "React is an open-source JavaScript library for building user interfaces. Developed by Facebook, it allows developers to create dynamic and reusable UI components that update efficiently in response to changes in data.",
     },
   ];
 
