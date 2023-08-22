@@ -1,6 +1,6 @@
 "use client";
-import axios from "axios";
 import useSWR from "swr";
+import axios from "axios";
 
 async function fetcher(url) {
   const res = await axios.get(url);
@@ -8,7 +8,7 @@ async function fetcher(url) {
 }
 
 const Content = () => {
-  const { data, error } = useSWR("../api/content", fetcher);
+  const { data, error } = useSWR("../api/page2", fetcher);
 
   if (error) return <div>Request Failed</div>;
   if (!data) return <div>Loading....</div>;
@@ -16,7 +16,7 @@ const Content = () => {
   const { id, imageUrl, title, body } = data.data;
 
   return (
-    <div className=" lg:mt-14 lg:ml-[360px] ml-4 my-8 md:mt-5 md:mx-8">
+    <div className=" lg:my-14 lg:ml-[360px] ml-4 my-8 md:mt-5 md:mx-8">
       {imageUrl && (
         <div
           key={id}
@@ -41,3 +41,4 @@ const Content = () => {
 };
 
 export default Content;
+
