@@ -16,11 +16,11 @@ const Content = () => {
   const { id, imageUrl, title, body } = data.data;
 
   return (
-    <div className=" lg:my-14 lg:ml-[360px] ml-4 my-8 md:mt-5 md:mx-8">
+    <div className=" lg:my-[4%] lg:mx-[19%] mx-[6%] my-8 md:mt-[4%] md:mx-8">
       {imageUrl && (
         <div
           key={id}
-          className="flex flex-col align-start bg-white rounded-[8px] ring-2 ring-bPurple-800 h-[946px] lg:h-[803px] lg:w-[1138px] md:h-[853px] md:w-[680px] w-72 overflow-hidden"
+          className="flex flex-col align-start bg-white rounded-[8px] ring-2 ring-bPurple-800 h-full w-full overflow-hidden"
         >
           <img
             src={imageUrl}
